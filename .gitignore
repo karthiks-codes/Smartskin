@@ -80,4 +80,5 @@ Thumbs.db __pycache__/
 backend/static/
 backend/data/
 backend/models/trained/
+backend/models/temp/
 
