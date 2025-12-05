@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartskin-frontend
+  namespace: smartskin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartskin-frontend
+  template:
+    metadata:
+      labels:
+        app: smartskin-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: karthikscode/smartskin-frontend:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_URL
+              value: "http://smartskin-backend:5000"

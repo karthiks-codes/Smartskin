@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smartskin-backend
+  namespace: smartskin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smartskin-backend
+  template:
+    metadata:
+      labels:
+        app: smartskin-backend
+    spec:
+      containers:
+        - name: backend
+          image: karthikscode/smartskin-backend:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+            - name: JWT_SECRET
+              value: "change_me_in_real_prod"

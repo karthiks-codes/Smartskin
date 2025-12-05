@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 import os
+import datetime
 import base64
 from models.skincare_recommender import SkincareRecommender
 from models.ingredients_analyzer import IngredientsAnalyzer
